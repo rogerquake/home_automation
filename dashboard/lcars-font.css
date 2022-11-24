@@ -1,0 +1,9 @@
+/*
+Fonts should go in /config/www/fonts/
+*/
+
+/* borda-regular - latin */
+@font-face {
+   font-family: LCARSGTJ2;
+   src: url(/local/fonts/LCARSGTJ2.ttf);
+}
