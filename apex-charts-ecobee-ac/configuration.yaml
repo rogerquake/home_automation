@@ -1,0 +1,14 @@
+sensor:
+  - platform: template
+    sensors:
+      ecobee_cooling:
+        friendly_name: "Ecobee Cool"
+        value_template: "{{ is_state_attr('climate.my_ecobee_2', 'hvac_action', 'cooling')}}"
+
+  - platform: history_stats
+    name: seven_days_ac
+    entity_id: sensor.ecobee_cooling
+    state: "True"
+    type: time
+    start: '{{ now().replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(days=7) }}'
+    end: '{{ now() }}'

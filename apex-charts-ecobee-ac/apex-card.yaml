@@ -1,0 +1,34 @@
+type: custom:apexcharts-card
+graph_span: 7d
+span:
+  start: day
+  offset: '-6d'
+series:
+  - entity: sensor.seven_days_ac
+    name: AC On Today
+    type: column
+    group_by:
+      func: delta
+      duration: 1d
+    show:
+      datalabels: true
+    extend_to_end: true
+    float_precision: 1
+header:
+  show: false
+  title: Main AC On Time
+  show_states: false
+  colorize_states: true
+yaxis:
+  - align_to: 0.5
+    decimals: 0
+    apex_config:
+      tickAmount: 2
+apex_config:
+  chart:
+    height: 210px
+  tooltip:
+    x:
+      format: ddd dd:MM
+view_layout:
+  column: 1
