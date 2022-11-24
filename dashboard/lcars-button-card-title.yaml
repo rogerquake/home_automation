@@ -1,0 +1,46 @@
+type: vertical-stack
+cards:
+  - type: custom:button-card
+    name: Lights
+    style:
+      .: |
+        ha-card {
+          display: flex;
+          position: relative;
+          margin: 3px 0;
+          overflow: visible;
+          border-radius: 14px;
+          height: 30px;
+          background-color: #68c;
+          border-right: 28px solid #68c;
+          border-left: 18px solid #68c;
+        }
+
+        ha-card div.ellipsis {
+        position: absolute;
+        left: 8px;
+        background-color: #000;
+        height: 40px;
+        overflow: visible;
+        padding: 5px;
+        font-size: 2.9rem;
+        font-family: LCARSGTJ2;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: #fa4;
+        }
+
+        ha-card::after {
+        content: "";
+        background-color: #000;
+        display: block;
+        width: 10px;
+        height: 37px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        }
+  - type: horizontal-stack
+    cards:
+    <INSERT YOUR CARD ENTITIES>

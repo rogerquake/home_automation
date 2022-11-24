@@ -1,0 +1,13 @@
+type: custom:simple-clock-card
+use_military: false
+hide_seconds: true
+font_size: 8rem
+padding_size: 35px
+style:
+  .: |
+    ha-card {
+      font-family: LCARSGTJ2;
+      color: #FFF;
+      background-color: #000;
+      text-align: center;
+    }
