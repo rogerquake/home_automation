@@ -1,0 +1,342 @@
+   - title: test-feed
+    path: frontdoor2
+    type: custom:grid-layout
+    layout:
+      max_cols: 2
+      grid-template-columns: 82.5% 17.5%
+    badges: []
+    cards:
+      - type: iframe
+        url: https://HomeAssistantURL/local/go2.html
+        aspect_ratio: 75%
+ 
+      - type: vertical-stack
+        cards:
+          - type: custom:button-card
+            name: null
+            show_last_changed: false
+            show_icon: false
+            style:
+              .: |
+                ha-card {
+                  background-color: #000;
+                }
+            styles:
+              name:
+                - font-size: 36px
+                - text-align: right
+          - type: custom:simple-clock-card
+            use_military: false
+            hide_seconds: true
+            font_size: 9rem
+            style:
+              .: |
+                ha-card {
+
+                  font-family: LCARSGTJ2;
+                  color: #FFF;
+                  padding-top: 10px;
+                  padding-bottom: 10px;
+                  background-color: #000;
+
+                }
+          - type: custom:button-card
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/lcars
+            name: Main Dashboard
+            show_last_changed: false
+            show_icon: false
+            style:
+              .: |
+                ha-card {
+                  border-radius: 30px;
+                  margin: 5px 0 0 5px;
+                  box-sizing: border-box;
+                  display: inline-block;
+                  width: 140px;
+                  height: 80px;
+                  border: 0;
+                  padding: 28px 10px 0;
+                  margin: 0;
+                  letter-spacing: .02em;
+                  -webkit-font-smoothing: antialiased;
+                  text-align: right;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  background-color: #ff9900;
+                  color: black;
+                  cursor: pointer;
+                  font-family: LCARSGTJ2;
+                }
+            styles:
+              name:
+                - font-size: 36px
+                - text-align: right
+          - type: custom:button-card
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/tablet-security
+            name: Security Feeds
+            show_last_changed: false
+            show_icon: false
+            style:
+              .: |
+                ha-card {
+                  border-radius: 30px;
+                  margin: 5px 0 0 5px;
+                  box-sizing: border-box;
+                  display: inline-block;
+                  width: 140px;
+                  height: 80px;
+                  border: 0;
+                  padding: 28px 10px 0;
+                  margin: 0;
+                  letter-spacing: .02em;
+                  -webkit-font-smoothing: antialiased;
+                  text-align: right;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  background-color: #9977AA;
+                  color: black;
+                  cursor: pointer;
+                  font-family: LCARSGTJ2;
+                }
+            styles:
+              name:
+                - font-size: 36px
+                - text-align: right
+          - type: custom:html-card
+            content: |
+              <style css>
+
+              .lcars-text-bar {
+                  display: flex;
+                  position: relative;
+                  margin: 0;
+                  overflow: visible;
+                  border-radius: 14px;
+                  height: 45px;
+                  background-color: #68c;
+                  border-right: 28px solid #68c;
+                  border-left: 28px solid #68c;
+              }
+              .lcars-text-bar::before {
+                  content: '';
+                  background-color: #000;
+                  display: block;
+                  width: 10px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+              }
+              .lcars-text-bar::after {
+                  background-color: #68c;
+                  display: block;
+                  width: 35px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  content: ' [[sensor.security_front_total]]';
+                  right: 0;
+
+                  #overflow: hidden;
+                  font-size: 3.5rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+              }
+
+              .lcars-text-bar span {
+                  position: absolute;
+                  background-color: #000;
+                  height: 46px;
+                  overflow: visible;
+                  padding: 0 10px;
+                  font-size: 4rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+                  text-transform: uppercase;
+                  color: #fa4;
+              }
+
+
+              .lcars-text-bar-back {
+                  display: flex;
+                  position: relative;
+                  margin: 0;
+                  overflow: visible;
+                  border-radius: 14px;
+                  height: 45px;
+                  background-color: #68c;
+                  border-right: 28px solid #68c;
+                  border-left: 28px solid #68c;
+              }
+              .lcars-text-bar-back::before {
+                  content: '';
+                  background-color: #000;
+                  display: block;
+                  width: 10px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+              }
+              .lcars-text-bar-back::after {
+                  background-color: #68c;
+                  display: block;
+                  width: 35px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  content: ' 0';
+                  right: 0;
+
+                  #overflow: hidden;
+                  font-size: 3.5rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+              }
+
+              .lcars-text-bar-back span {
+                  position: absolute;
+                  background-color: #000;
+                  height: 46px;
+                  overflow: visible;
+                  padding: 0 10px;
+                  font-size: 4rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+                  text-transform: uppercase;
+                  color: #fa4;
+              }
+
+
+
+              .lcars-text-bar-west {
+                  display: flex;
+                  position: relative;
+                  margin: 0;
+                  overflow: visible;
+                  border-radius: 14px;
+                  height: 45px;
+                  background-color: #68c;
+                  border-right: 28px solid #68c;
+                  border-left: 28px solid #68c;
+              }
+              .lcars-text-bar-west::before {
+                  content: '';
+                  background-color: #000;
+                  display: block;
+                  width: 10px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+              }
+              .lcars-text-bar-west::after {
+                  background-color: #68c;
+                  display: block;
+                  width: 35px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  content: ' 0';
+                  right: 0;
+
+                  #overflow: hidden;
+                  font-size: 3.5rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+              }
+
+              .lcars-text-bar-west span {
+                  position: absolute;
+                  background-color: #000;
+                  height: 46px;
+                  overflow: visible;
+                  padding: 0 10px;
+                  font-size: 4rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+                  text-transform: uppercase;
+                  color: #fa4;
+              }
+
+
+
+              .lcars-text-bar-east {
+                  display: flex;
+                  position: relative;
+                  margin: 0;
+                  overflow: visible;
+                  border-radius: 14px;
+                  height: 45px;
+                  background-color: #68c;
+                  border-right: 28px solid #68c;
+                  border-left: 28px solid #68c;
+              }
+              .lcars-text-bar-east::before {
+                  content: '';
+                  background-color: #000;
+                  display: block;
+                  width: 10px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+              }
+              .lcars-text-bar-east::after {
+                  background-color: #68c;
+                  display: block;
+                  width: 35px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  content: ' [[security_eastside_total]]';
+                  right: 0;
+
+                  #overflow: hidden;
+                  font-size: 3.5rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+              }
+
+              .lcars-text-bar-east span {
+                  position: absolute;
+                  background-color: #000;
+                  height: 46px;
+                  overflow: visible;
+                  padding: 0 10px;
+                  font-size: 4rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+                  text-transform: uppercase;
+                  color: #fa4;
+              }
+              </style>
+              <div class="lcars-text-bar">
+                <span>Front</span>
+              </div>
+          - type: custom:html-card
+            content: |
+              <div class="lcars-text-bar-back">
+                <span>Back</span>
+              </div>
+          - type: custom:html-card
+            content: |
+              <div class="lcars-text-bar-west">
+                <span>West</span>
+              </div>
+          - type: custom:html-card
+            content: |
+
+              <div class="lcars-text-bar">
+                <span>East</span>
+              </div>
+            view_layout:
+              column: 2

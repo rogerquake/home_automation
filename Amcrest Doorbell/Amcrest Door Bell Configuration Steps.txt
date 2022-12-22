@@ -1,0 +1,35 @@
+Goes in your configuration.yaml file:
+
+shell_command:
+  # DoorBell Audio Alerts
+  doorbell_audio_alert_goaway: bash /config/doorbell_audio_alert_goaway.sh
+  doorbell_audio_whoareyou_goaway: bash /config/doorbell_audio_alert_goaway.sh
+  doorbell_audio_alert_be_right_there: bash /config/doorbell_audio_alert_be_right_there.sh
+
+
+Commands to convert the pre-recorded audio alerts you create to the correct format and freqnency for the Amcrest doorbell:
+Using Sox: sox -v 0.8 be_right_there.WAV  -r 8k -c1 be_right_there.al
+Using FFMPEG: ffmpeg -y -i "be_right_there.WAV" -c:a pcm_alaw -ar 8000 -sample_fmt s16 be_right_there.al
+
+
+Create seperate bash scripts for each audio alert that map to the items above:
+
+#!/bin/bash
+
+curl -vvv \
+--limit-rate 8K \
+-F "file=@upload/be_right_there.al;type=Audio/G.711A" \
+-H "Content-Type: Audio/G.711A" \
+"http://admin:password@AmcrestDoorBellIP/cgi-bin/audio.cgi?action=postAudio&httptype=singlepart&channel=1" &
+PID=$!
+echo PID is $pid, before kill:
+sleep 6
+kill $PID
+exit 0
+
+API URL to Change Audio Codec on the Doorbell:
+
+http://AmcrestDoorBellIP/cgi-bin/configManager.cgi?action=setConfig&Encode[0].MainFormat[0].Audio.Compression=G.711A&Encode[0].MainFormat[0].Audio.Frequency=8000
+
+API URL to Keep Doorbell Online if Internet is Blocked
+http://AmcrestDoorBellIP/cgi-bin/configManager.cgi?action=setConfig&VSP_PaaS.Online=true

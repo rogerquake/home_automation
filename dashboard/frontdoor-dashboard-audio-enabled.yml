@@ -1,0 +1,460 @@
+  - theme: Backend-selected
+    title: FrontDoorAudio
+    path: frontdooraudio
+    type: custom:grid-layout
+    layout:
+      max_cols: 2
+      grid-template-columns: 82.5% 17.5%
+    badges: []
+    cards:
+      - type: custom:frigate-card
+        cameras:
+          - camera_entity: camera.127_0_0_1
+            live_provider: ha
+            frigate: {}
+            webrtc_card: {}
+        menu:
+          buttons:
+            frigate:
+              enabled: false
+            cameras:
+              enabled: false
+          style: none
+        event_gallery:
+          controls:
+            thumbnails:
+              show_details: false
+              show_favorite_control: false
+              show_timeline_control: false
+        media_viewer:
+          draggable: false
+          lazy_load: false
+          controls:
+            thumbnails:
+              show_details: false
+              show_favorite_control: false
+              show_timeline_control: false
+              mode: none
+            next_previous:
+              style: none
+        timeline:
+          show_recordings: false
+          controls:
+            thumbnails:
+              show_details: false
+              show_favorite_control: false
+              show_timeline_control: false
+              mode: none
+        live:
+          auto_unmute: all
+          draggable: false
+          controls:
+            next_previous:
+              style: none
+            thumbnails:
+              mode: none
+          layout:
+            fit: cover
+            position:
+              x: 100
+              'y': 100
+        dimensions:
+          aspect_ratio_mode: dynamic
+        view_layout:
+          column: 1
+      - type: vertical-stack
+        cards:
+          - type: custom:button-card
+            name: null
+            show_last_changed: false
+            show_icon: false
+            style:
+              .: |
+                ha-card {
+                  background-color: #000;
+                }
+            styles:
+              name:
+                - font-size: 36px
+                - text-align: right
+          - type: custom:simple-clock-card
+            use_military: false
+            hide_seconds: true
+            font_size: 9rem
+            style:
+              .: |
+                ha-card {
+
+                  font-family: LCARSGTJ2;
+                  color: #FFF;
+                  padding-top: 10px;
+                  padding-bottom: 10px;
+                  background-color: #000;
+
+                }
+          - type: custom:button-card
+            tap_action:
+              action: call-service
+              service: script.doorbell_audio_alert_be_right_there
+            name: Be Right There
+            show_last_changed: false
+            show_icon: false
+            style:
+              .: |
+                ha-card {
+                  border-radius: 30px;
+                  margin: 5px 0 0 5px;
+                  box-sizing: border-box;
+                  display: inline-block;
+                  width: 140px;
+                  height: 80px;
+                  border: 0;
+                  padding: 28px 10px 0;
+                  margin: 0;
+                  letter-spacing: .02em;
+                  -webkit-font-smoothing: antialiased;
+                  text-align: right;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  background-color: #ff9900;
+                  color: black;
+                  cursor: pointer;
+                  font-family: LCARSGTJ2;
+                }
+            styles:
+              name:
+                - font-size: 36px
+                - text-align: right
+          - type: custom:button-card
+            tap_action:
+              action: call-service
+              service: script.doorbell_audio_alert_goaway
+            name: Who Are You
+            show_last_changed: false
+            show_icon: false
+            style:
+              .: |
+                ha-card {
+                  border-radius: 30px;
+                  margin: 5px 0 0 5px;
+                  box-sizing: border-box;
+                  display: inline-block;
+                  width: 140px;
+                  height: 80px;
+                  border: 0;
+                  padding: 28px 10px 0;
+                  margin: 0;
+                  letter-spacing: .02em;
+                  -webkit-font-smoothing: antialiased;
+                  text-align: right;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  background-color: #9977AA;
+                  color: black;
+                  cursor: pointer;
+                  font-family: LCARSGTJ2;
+                }
+            styles:
+              name:
+                - font-size: 36px
+                - text-align: right
+          - type: custom:button-card
+            tap_action:
+              action: call-service
+              service: script.doorbell_audio_alert_goaway
+            name: Go Away
+            show_last_changed: false
+            show_icon: false
+            style:
+              .: |
+                ha-card {
+                  border-radius: 30px;
+                  margin: 5px 0 0 5px;
+                  box-sizing: border-box;
+                  display: inline-block;
+                  width: 140px;
+                  height: 80px;
+                  border: 0;
+                  padding: 28px 10px 0;
+                  margin: 0;
+                  letter-spacing: .02em;
+                  -webkit-font-smoothing: antialiased;
+                  text-align: right;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  background-color: #BB4411;
+                  color: black;
+                  cursor: pointer;
+                  font-family: LCARSGTJ2;
+                }
+            styles:
+              name:
+                - font-size: 36px
+                - text-align: right
+          - type: custom:button-card
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/frontdoor2
+            name: Microphone
+            show_last_changed: false
+            show_icon: false
+            style:
+              .: |
+                ha-card {
+                  border-radius: 30px;
+                  margin: 5px 0 0 5px;
+                  box-sizing: border-box;
+                  display: inline-block;
+                  width: 140px;
+                  height: 80px;
+                  border: 0;
+                  padding: 28px 10px 0;
+                  margin: 0;
+                  letter-spacing: .02em;
+                  -webkit-font-smoothing: antialiased;
+                  text-align: right;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  background-color: #BBAA55;
+                  color: black;
+                  cursor: pointer;
+                  font-family: LCARSGTJ2;
+                }
+            styles:
+              name:
+                - font-size: 36px
+                - text-align: right
+          - type: custom:html-card
+            content: |
+              <style css>
+
+              .lcars-text-bar {
+                  display: flex;
+                  position: relative;
+                  margin: 0;
+                  overflow: visible;
+                  border-radius: 14px;
+                  height: 45px;
+                  background-color: #68c;
+                  border-right: 28px solid #68c;
+                  border-left: 28px solid #68c;
+              }
+              .lcars-text-bar::before {
+                  content: '';
+                  background-color: #000;
+                  display: block;
+                  width: 10px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+              }
+              .lcars-text-bar::after {
+                  background-color: #68c;
+                  display: block;
+                  width: 35px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  content: ' [[sensor.security_front_total]]';
+                  right: 0;
+
+                  #overflow: hidden;
+                  font-size: 3.5rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+              }
+
+              .lcars-text-bar span {
+                  position: absolute;
+                  background-color: #000;
+                  height: 46px;
+                  overflow: visible;
+                  padding: 0 10px;
+                  font-size: 4rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+                  text-transform: uppercase;
+                  color: #fa4;
+              }
+
+
+              .lcars-text-bar-back {
+                  display: flex;
+                  position: relative;
+                  margin: 0;
+                  overflow: visible;
+                  border-radius: 14px;
+                  height: 45px;
+                  background-color: #68c;
+                  border-right: 28px solid #68c;
+                  border-left: 28px solid #68c;
+              }
+              .lcars-text-bar-back::before {
+                  content: '';
+                  background-color: #000;
+                  display: block;
+                  width: 10px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+              }
+              .lcars-text-bar-back::after {
+                  background-color: #68c;
+                  display: block;
+                  width: 35px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  content: ' 0';
+                  right: 0;
+
+                  #overflow: hidden;
+                  font-size: 3.5rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+              }
+
+              .lcars-text-bar-back span {
+                  position: absolute;
+                  background-color: #000;
+                  height: 46px;
+                  overflow: visible;
+                  padding: 0 10px;
+                  font-size: 4rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+                  text-transform: uppercase;
+                  color: #fa4;
+              }
+
+
+
+              .lcars-text-bar-west {
+                  display: flex;
+                  position: relative;
+                  margin: 0;
+                  overflow: visible;
+                  border-radius: 14px;
+                  height: 45px;
+                  background-color: #68c;
+                  border-right: 28px solid #68c;
+                  border-left: 28px solid #68c;
+              }
+              .lcars-text-bar-west::before {
+                  content: '';
+                  background-color: #000;
+                  display: block;
+                  width: 10px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+              }
+              .lcars-text-bar-west::after {
+                  background-color: #68c;
+                  display: block;
+                  width: 35px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  content: ' 0';
+                  right: 0;
+
+                  #overflow: hidden;
+                  font-size: 3.5rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+              }
+
+              .lcars-text-bar-west span {
+                  position: absolute;
+                  background-color: #000;
+                  height: 46px;
+                  overflow: visible;
+                  padding: 0 10px;
+                  font-size: 4rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+                  text-transform: uppercase;
+                  color: #fa4;
+              }
+
+
+
+              .lcars-text-bar-east {
+                  display: flex;
+                  position: relative;
+                  margin: 0;
+                  overflow: visible;
+                  border-radius: 14px;
+                  height: 45px;
+                  background-color: #68c;
+                  border-right: 28px solid #68c;
+                  border-left: 28px solid #68c;
+              }
+              .lcars-text-bar-east::before {
+                  content: '';
+                  background-color: #000;
+                  display: block;
+                  width: 10px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+              }
+              .lcars-text-bar-east::after {
+                  background-color: #68c;
+                  display: block;
+                  width: 35px;
+                  height: 45px;
+                  position: absolute;
+                  top: 0;
+                  content: ' [[security_eastside_total]]';
+                  right: 0;
+
+                  #overflow: hidden;
+                  font-size: 3.5rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+              }
+
+              .lcars-text-bar-east span {
+                  position: absolute;
+                  background-color: #000;
+                  height: 46px;
+                  overflow: visible;
+                  padding: 0 10px;
+                  font-size: 4rem;
+                  font-family: LCARSGTJ2;
+                  line-height: 50px;
+                  text-transform: uppercase;
+                  color: #fa4;
+              }
+              </style>
+              <div class="lcars-text-bar">
+                <span>Front</span>
+              </div>
+          - type: custom:html-card
+            content: |
+              <div class="lcars-text-bar-back">
+                <span>Back</span>
+              </div>
+          - type: custom:html-card
+            content: |
+              <div class="lcars-text-bar-west">
+                <span>West</span>
+              </div>
+          - type: custom:html-card
+            content: |
+
+              <div class="lcars-text-bar">
+                <span>East</span>
+              </div>
+            view_layout:
+              column: 2
