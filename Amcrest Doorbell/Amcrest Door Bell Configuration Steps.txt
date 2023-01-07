@@ -1,10 +1,31 @@
 Goes in your configuration.yaml file:
 
+In the configuration.taml file:
 shell_command:
   # DoorBell Audio Alerts
-  doorbell_audio_alert_goaway: bash /config/doorbell_audio_alert_goaway.sh
-  doorbell_audio_whoareyou_goaway: bash /config/doorbell_audio_alert_goaway.sh
   doorbell_audio_alert_be_right_there: bash /config/doorbell_audio_alert_be_right_there.sh
+  doorbell_audio_alert_goaway: bash /config/doorbell_audio_alert_goaway.sh
+  doorbell_audio_who_are_you: bash /config/doorbell_audio_alert_who_are_you.sh
+
+  # Keep DoorBell Online
+  doorbell_online: "curl -u admin:password -X GET --digest 'http://DoorBellIP/cgi-bin/configManager.cgi?action=setConfig&VSP_PaaS.Online=true'"
+
+In the scripts.yaml file:
+
+doorbell_audio_alert_be_right_there:
+  alias: Door Bell Be Right There Audio
+  sequence:
+    service: shell_command.doorbell_audio_alert_be_right_there
+
+doorbell_audio_alert_goaway:
+  alias: Door Bell Go Away Audio
+  sequence:
+    service: shell_command.doorbell_audio_alert_goaway
+
+doorbell_audio_alert_who_are_you:
+  alias: Door Bell Who Are You
+  sequence:
+    service: shell_command.doorbell_audio_who_are_you
 
 
 Commands to convert the pre-recorded audio alerts you create to the correct format and freqnency for the Amcrest doorbell:
