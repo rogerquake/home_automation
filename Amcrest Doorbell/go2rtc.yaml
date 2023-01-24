@@ -1,0 +1,4 @@
+streams:
+  # you need to include the #backchannel=0 to allow the video feed with audio (no2 way audio) on multiple devices.	
+  front_door_bell_audio_only: rtsp://admin:password@AmcrestIP:554/cam/realmonitor?channel=1&subtype=0#backchannel=0
+  front_door_bell_two_way: rtsp://admin:password@AmcrestIP:554/cam/realmonitor?channel=1&subtype=0
