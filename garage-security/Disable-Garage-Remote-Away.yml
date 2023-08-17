@@ -1,0 +1,16 @@
+alias: Enable Garage Door Remote - Arrive
+description: ""
+trigger:
+  - platform: template
+    value_template: "{{ (states.proximity.home_proximity_roger.state | float) <= 500 }}"
+    enabled: true
+  - platform: template
+    value_template: "{{ (states.proximity.home_proximity_tara.state | float) <= 500 }}"
+    enabled: true
+condition: []
+action:
+  - type: turn_off
+    device_id: bd583278ce79427dc61fded1b0db4248
+    entity_id: switch.ratgdo_lock_remotes
+    domain: switch
+mode: single

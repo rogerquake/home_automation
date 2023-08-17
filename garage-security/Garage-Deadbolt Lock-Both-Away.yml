@@ -1,0 +1,32 @@
+alias:  Garage Deadbolt Lock - Both  Away
+description: ""
+trigger:
+  - platform: template
+    value_template: "{{ (states.proximity.home_proximity_roger.state | float) >= 2640 }}"
+    enabled: true
+  - platform: template
+    value_template: "{{ (states.proximity.home_proximity_tara | float) >= 2640 }}"
+    enabled: true
+condition:
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: device_tracker.roger_tablet_test
+        state: home
+      - condition: state
+        entity_id: device_tracker.tara_tablet_test
+        state: home
+  - condition: state
+    entity_id: input_boolean.garage_door_deadbolt_locked
+    state: "off"
+action:
+  - type: turn_on
+    device_id: e9d5fb7892ad51aa5b2c5fb8f34b77df
+    entity_id: light.garage_door_lock
+    domain: light
+    flash: long
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.garage_door_deadbolt_locked
+mode: single

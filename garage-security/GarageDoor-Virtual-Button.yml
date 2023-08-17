@@ -1,0 +1,57 @@
+alias: garage door virtual button "
+description: ""
+trigger:
+  - platform: device
+    type: changed_states
+    device_id: e70b9c4f384b057eed05caf297a70283
+    entity_id: switch.garage_2_2
+    domain: switch
+condition: []
+action:
+  - if:
+      - condition: device
+        device_id: bd583278ce79427dc61fded1b0db4248
+        domain: cover
+        entity_id: cover.ratgdo_door
+        type: is_closed
+    then:
+      - if:
+          - condition: state
+            entity_id: input_boolean.garage_door_deadbolt_locked
+            state: "on"
+        then:
+          - type: toggle
+            device_id: e9d5fb7892ad51aa5b2c5fb8f34b77df
+            entity_id: light.garage_door_lock_light_2
+            domain: light
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 1
+              milliseconds: 0
+          - device_id: bd583278ce79427dc61fded1b0db4248
+            domain: cover
+            entity_id: cover.ratgdo_door
+            type: open
+          - service: input_boolean.turn_off
+            data: {}
+            target:
+              entity_id: input_boolean.garage_door_deadbolt_locked
+        else:
+          - device_id: bd583278ce79427dc61fded1b0db4248
+            domain: cover
+            entity_id: cover.ratgdo_door
+            type: open
+    else:
+      - if:
+          - condition: device
+            device_id: bd583278ce79427dc61fded1b0db4248
+            domain: cover
+            entity_id: cover.ratgdo_door
+            type: is_open
+        then:
+          - device_id: bd583278ce79427dc61fded1b0db4248
+            domain: cover
+            entity_id: cover.ratgdo_door
+            type: close
+mode: single

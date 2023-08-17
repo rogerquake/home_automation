@@ -33,8 +33,8 @@ Below are links to YAML files for the automations presented in the video:
 
 - Proximity Entities
 - Virtual Garage Door Button
-- Deadbolt Automation
-- Remote Automation
+- Deadbolt Automation: [Lock] - [Unlock]
+- Remote Automation: [Lock] - [Unlock]
 
 
 ## FAQ

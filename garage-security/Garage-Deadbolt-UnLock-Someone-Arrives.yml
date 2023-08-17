@@ -1,0 +1,33 @@
+alias: Garage Door Deadbolt Unlock
+description: ""
+trigger:
+  - platform: zone
+    entity_id: device_tracker.roger_phone
+    zone: zone.home
+    event: enter
+  - platform: zone
+    entity_id: device_tracker.taraiphone
+    zone: zone.home
+    event: enter
+condition:
+  - condition: state
+    entity_id: input_boolean.garage_door_deadbolt_locked
+    state: "on"
+    enabled: true
+action:
+  - type: turn_on
+    device_id: e9d5fb7892ad51aa5b2c5fb8f34b77df
+    entity_id: light.garage_door_lock_light_2
+    domain: light
+    flash: long
+    enabled: false
+  - type: turn_on
+    device_id: e4e3ded3c478a47dedb64220ed01a46f
+    entity_id: light.test_garage_light
+    domain: light
+    flash: long
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.garage_door_deadbolt_locked
+mode: single
