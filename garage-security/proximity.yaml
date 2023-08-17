@@ -1,0 +1,14 @@
+proximity:
+  home_proximity_roger:
+    zone: home
+    devices:
+      - device_tracker.my_phone_1
+    tolerance: 10
+    unit_of_measurement: ft
+
+  home_proximity_tara:
+    zone: home
+    devices:
+      - device_tracker.my_phone_2
+    tolerance: 10
+    unit_of_measurement: ft

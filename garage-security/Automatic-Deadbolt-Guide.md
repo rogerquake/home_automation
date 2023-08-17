@@ -31,10 +31,10 @@ Below is the wiring diagram that should be used for the deadbolt. The relay need
 
 Below are links to YAML files for the automations presented in the video:
 
-- Proximity Entities
-- Virtual Garage Door Button
-- Deadbolt Automation: [Lock] - [Unlock]
-- Remote Automation: [Lock] - [Unlock]
+- Proximity Entities(https://github.com/rogerquake/home_automation/blob/main/garage-security/proximity.yaml)
+- [Virtual Garage Door Button](https://github.com/rogerquake/home_automation/blob/main/garage-security/GarageDoor-Virtual-Button.yaml)
+- Deadbolt Automation: [Lock](https://github.com/rogerquake/home_automation/blob/main/garage-security/Garage-Deadbolt%20Lock-Both-Away.yaml) - [Unlock](https://github.com/rogerquake/home_automation/blob/main/garage-security/Garage-Deadbolt-UnLock-Someone-Arrives.yml)
+- Remote Automation: [Lock](https://github.com/rogerquake/home_automation/blob/main/garage-security/Disable-Garage-Remote-Away.yaml) - [Unlock](https://github.com/rogerquake/home_automation/blob/main/garage-security/Enable-Garage-Remote-Home.yml)
 
 
 ## FAQ
