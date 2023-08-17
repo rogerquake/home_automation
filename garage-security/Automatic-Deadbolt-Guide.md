@@ -25,7 +25,7 @@ Cut the connector off from the deadbolt and expose a portion of the two wires. T
 
 Below is the wiring diagram that should be sued for the deadbolt. The relay needs to be switched to momentary interlock mode using the third phyical button on the relay. This is the button closest to the USB power connector.
 
-![Relay Wiring Diagram](https://octodex.github.com/images/minion.png)
+![Relay Wiring Diagram](https://github.com/rogerquake/home_automation/blob/main/garage-security/deadbolt_wiring.jpg)
 
 ## HomeAssistant
 
