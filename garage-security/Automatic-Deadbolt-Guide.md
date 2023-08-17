@@ -13,6 +13,7 @@ These are the components used in the Automatic Garage Door Deadbolt video:
 - [12V 3A Power Adapter](https://www.amazon.com/gp/product/B07XMC9D6R/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 - [12V DC Power Jack Adapter Connectors](https://www.amazon.com/gp/product/B0B7XXH8RD/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 - [Micro USB Cable for Relay](https://www.amazon.com/gp/product/B0BTH4NZ8M/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+- [Zooz Z-Wave Switch](https://www.amazon.com/gp/product/B0846CJTRN/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 - [Junction Box for Relay](https://www.amazon.com/gp/product/B085QCT543/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
 - [ratgdo shield](https://github.com/PaulWieland/ratgdo)
 - [Junction Box for ratgdo shield](https://www.amazon.com/gp/product/B0B2RHX8B3/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
